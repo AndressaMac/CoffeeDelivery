@@ -13,7 +13,7 @@ export const defaultTheme = {
   'Text': '#574F4D',
   'gray-500': '#8D8686',
   'gray-600': '#D7D5D5',
-  'gray-700': '#E6E5E5',
+  'Button': '#E6E5E5',
   'gray-800': '#EDEDED',
   'gray-900': '#F3F2F2',
 
