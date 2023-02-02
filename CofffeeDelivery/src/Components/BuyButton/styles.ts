@@ -8,7 +8,7 @@ padding: 0px;
 justify-content: space-around;
 align-items: center;
 width: 100px;
-height: 38px;
+
 
 border-radius: 10px;
 background: ${(props) => props.theme['Button']};
