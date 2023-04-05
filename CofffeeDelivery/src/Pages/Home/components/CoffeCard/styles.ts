@@ -7,7 +7,7 @@ flex-direction: column;
 align-items: center;
 
 margin-top: 50px;
-width: 256px;
+width: 215px;
 height: 310px;
 left: 0px;
 top: 0px;
@@ -51,17 +51,14 @@ padding: 20px;
 }
 
 `
-export const Coffee = styled.div`
+export const Coffee = styled.img`
 
 
 position: relative;
 width: 120px;
 height: 120px;
 top: -20px;
-background: ${(props) => props.theme['Yellow-Dark']};
 border-radius: 50%;
-
-
 
 `
 
@@ -94,7 +91,7 @@ padding: 0;
 
 `
 
-export const CartPurple = styled.a`
+export const CartPurple = styled.button`
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -102,12 +99,15 @@ align-items: center;
 padding: 8px;
 gap: 4px;
 
-width: 38px;
-height: 38px;
-
+width: 35px;
+height: 35px;
+border: none;
 background: ${(props) => props.theme['Purple']};
 border-radius: 6px;
 
+:hover{
+  cursor: pointer;
+}
 `
 
 

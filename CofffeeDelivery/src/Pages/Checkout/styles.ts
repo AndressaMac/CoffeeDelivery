@@ -17,7 +17,7 @@ flex-direction: column;
 
 `
 
-export const FormContainer = styled.div `
+export const FormContainer = styled.form `
 
 display: flex;
 flex-direction: column;
@@ -57,7 +57,7 @@ gap: 12px;
 }
 `
 
-export const FormContent = styled.form`
+export const FormContent = styled.div`
 
 
 display: flex;
@@ -65,11 +65,18 @@ flex-direction: column;
 align-items: flex-start;
 padding-right: 40px;
 gap: 16px;
+margin-top: 2rem;
 
+.inputFlexfist{
+display: flex;
+flex-direction: row;
+gap: 12px
+
+}
 .inputFlex{
- display: flex;
- flex-direction: row;
-
+display: flex;
+flex-direction: row;
+gap: 12px
 }
 
 input{
@@ -84,30 +91,10 @@ padding-left: 10px;
 input:focus {
   outline: none;
 }
-.inptbase{
-  width: 100%;
-}
 
-.cpf{
-  width: 200px;
-}
-.rua{
-width: 240%;
-}
-.numero{
-width: 200px;
-}
-.complemento{
-width: 300%;
-}
-.bairro{
-width: 200px
-}
-.cidade{
-width: 276px
-}
+
 .uf{
-width: 60px;
+  width: 45px;
 }
 
 `
@@ -123,80 +110,65 @@ border-radius: 6px 44px;
 
 export const Payment = styled.div`
 
-display: flex;
-flex-direction: row;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr ;
 padding: 16px;
 gap: 12px;
- 
+
+
+
 div{
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  position: relative;
+  width:7.5rem;
+};
+
+.paymentBox {
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  position: relative;
+  width:7.5rem;
+
+}
+
+
+input{
+  border:transparent 1px solid;
+}
+
+input:checked + label {
+  border : ${(toggle) => toggle ? '#4B2995': '#FFFFFF'} 1px solid;
+}
+
+label{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap:5px;
+top: 0rem;
+height: 70px;
+position: absolute;
 background: #E6E5E5;
+box-sizing: border-box;
 border: 2px solid #E6E5E5;
 border-radius: 6px;
 padding: 16px;
 font-family: 'Roboto';
 font-style: normal;
+flex-grow: 0;
+font-size: 12px;
 color: ${(props) => props.theme['Text']};
-}
- 
-div:hover{
+&:hover {
 cursor: pointer;
-border: 2px solid ;
-border-color: ${(props) => props.theme['Purple-Dark']} ;
+  }
 }
 
 `
 
-export const CoffeeSelect = styled.div`
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 10px;
-margin-top: 20px;
-margin-bottom: 20px;
-padding-bottom: 20px;
-border-bottom: 1px solid #E6E5E5 ;
-
-.image{
-width: 64px;
-height: 64px;
-background-color: brown;
-border-radius: 50%;
-}
-
-p {
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-color: ${(props) => props.theme['Subtitle']};
-}
-.buttons{
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-div button {
-
-width: 80px;
-gap: 4px;
-background: #E6E5E5;
-border-radius: 6px;
-border: transparent;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-color: ${(props) => props.theme['Text']}
-}
-
-span{
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 700;
-color: ${(props) => props.theme['Text']};
-}
-
-`
 
 export const CoffeePrice = styled.div`
 display: flex;
@@ -229,6 +201,7 @@ font-family: 'Roboto';
 font-style: normal;
 font-weight: 700;
 padding: 10px;
+cursor: pointer;
 }
 
 `

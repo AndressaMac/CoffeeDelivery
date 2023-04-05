@@ -89,8 +89,12 @@ color:${(props) => props.theme['Text']};
 
 padding-top: 5px;
 
-
 }
+`
 
+export const BoxCoffee = styled.div`
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 
 `

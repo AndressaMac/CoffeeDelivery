@@ -1,16 +1,31 @@
-import {ButtonContainer} from './styles'
+import { useContext, useEffect, useState } from 'react'
+import { CounterContext } from '../../App'
+import { ButtonContainer } from './styles'
+import { CoffeeInfor } from '../../Coffes'
 
+export default function QuantityButton({ id = '', quantity = '' }) {
+  const { addCart, subtCart, TotalShoppingCart, findquantity, quantityid } =
+    useContext(CounterContext)
 
-export default function ButtonBuy(){
+  useEffect(() => {
+    // findquantity(Number(id))
+  }, [quantityid])
 
-  return(
-  
-  <ButtonContainer>
-      <button>-</button>
-      <span>0</span>
-      <button>+</button>
-  </ButtonContainer>
-      
+  function PlusButton() {
+    addCart(id)
+    TotalShoppingCart()
+  }
 
+  function RemoveButton() {
+    subtCart(id)
+    TotalShoppingCart()
+  }
+
+  return (
+    <ButtonContainer key={id}>
+      <button onClick={RemoveButton}>-</button>
+      <span>{quantity}</span>
+      <button onClick={PlusButton}>+</button>
+    </ButtonContainer>
   )
-} 
+}
